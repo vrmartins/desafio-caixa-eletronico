@@ -9,13 +9,13 @@ function errorHandling (app) {
       'InvalidAmountError',
       'ValidationError'
     ]
-    console.log(error.name)
+
     if (knownErrors.includes(error.name)) {
       logger.debug(error.name, { error })
       return response.status(error.status || 400).json({ error })
     }
 
-    logger.error('An unknown error ocurred ===> ', { error })
+    logger.error('An unknown error ocurred: ', { error })
 
     return response.status(500).json({ message: 'Unexepected error' })
   })
