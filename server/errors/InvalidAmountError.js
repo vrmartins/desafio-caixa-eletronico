@@ -9,7 +9,7 @@ class InvalidAmountError {
    */
   constructor (...args) {
     this.name = 'InvalidAmountError'
-    this.message = args[0] || 'Invalid amount.'
+    this.message = args[0]
     this.status = 422
     Error.captureStackTrace(this, InvalidAmountError)
   }
