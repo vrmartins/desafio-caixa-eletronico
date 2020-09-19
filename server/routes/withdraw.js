@@ -6,7 +6,7 @@ const validate = require('../utils/joi/validate')
 const router = new express.Router()
 
 const withdrawSchema = Joi.object().keys({
-  amount: Joi.number().required()
+  amount: Joi.number().required().min(1)
 })
 
 /**
