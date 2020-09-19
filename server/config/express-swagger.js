@@ -1,6 +1,4 @@
 const startup = (app) => {
-  if (process.env.NODE_ENV === 'production') return false
-
   const expressSwagger = require('express-swagger-generator')(app)
 
   const options = {

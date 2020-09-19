@@ -9,8 +9,8 @@
     "dev": "./node_modules/.bin/nodemon",
     "lint": "./node_modules/.bin/eslint ./",
     "lint:fix": "./node_modules/.bin/eslint ./ --fix",
-    "test": "NODE_ENV=test nyc --reporter=html --reporter=text node_modules/.bin/_mocha  --opts test/integration/mocha.opts test/integration/**/*.spec.js",
-    "test:container": "docker-compose -f docker-compose-test.yml up --abort-on-container-exit && docker-compose -f docker-compose-test.yml down"
+    "test": "NODE_ENV=test nyc --reporter=html --reporter=text node_modules/.bin/_mocha  --config .mocharc.yml test/**/*.spec.js",
+    "test:container": "docker-compose -f docker-compose-test.yml up --build --abort-on-container-exit && docker-compose -f docker-compose-test.yml down"
   },
   "repository": {
     "type": "git",
